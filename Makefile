@@ -1,16 +1,18 @@
 .PHONY: install brain-games publish link
 
+# Установка зависимостей и настройка прав
 install:
 	npm ci
 	chmod +x bin/brain-games.js
 
+# Запуск игры
 brain-games:
-    ./bin/brain-games.js
+	./bin/brain-games.js
 
-# Тест публикации в NPM (без реальной отправки)
+# Тест публикации (без реальной отправки)
 publish:
 	npm publish --dry-run
 
-# Локальная "глобальная" установка пакета (для отладки)
+# Локальная глобальная установка (может потребоваться sudo)
 link:
 	npm link
