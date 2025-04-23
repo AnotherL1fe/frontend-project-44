@@ -1,4 +1,4 @@
-.PHONY: install brain-games publish link
+.PHONY: install brain-games publish link lint
 
 # Установка зависимостей и настройка прав
 install:
@@ -16,3 +16,7 @@ publish:
 # Локальная глобальная установка (может потребоваться sudo)
 link:
 	npm link
+
+# Проверка и исправление стиля кода
+lint:
+	npx eslint --fix .
