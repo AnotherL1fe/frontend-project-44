@@ -18,15 +18,14 @@ const generateProgression = (start, step, length) => {
 };
 
 while (correctAnswers < roundsToWin) {
-  const length = Math.floor(Math.random() * 6) + 5; // Длина 5-10 чисел
+  const length = Math.floor(Math.random() * 6) + 5;
   const start = Math.floor(Math.random() * 10) + 1;
   const step = Math.floor(Math.random() * 5) + 1;
   
   const progression = generateProgression(start, step, length);
   const hiddenIndex = Math.floor(Math.random() * progression.length);
   const correctAnswer = progression[hiddenIndex];
-  
-  // Создаем строку с прогрессией, где одно число заменено на ..
+
   const question = progression
     .map((num, index) => (index === hiddenIndex ? '..' : num))
     .join(' ');
