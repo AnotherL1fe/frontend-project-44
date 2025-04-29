@@ -15,13 +15,13 @@ const generateProgression = (start, step, length) => {
     progression.push(start + step * i);
   }
   return progression;
-};
+}
 
 while (correctAnswers < roundsToWin) {
   const length = Math.floor(Math.random() * 6) + 5;
   const start = Math.floor(Math.random() * 10) + 1;
   const step = Math.floor(Math.random() * 5) + 1;
-  
+
   const progression = generateProgression(start, step, length);
   const hiddenIndex = Math.floor(Math.random() * progression.length);
   const correctAnswer = progression[hiddenIndex];
@@ -36,7 +36,8 @@ while (correctAnswers < roundsToWin) {
   if (parseInt(userAnswer, 10) === correctAnswer) {
     console.log('Correct!');
     correctAnswers += 1;
-  } else {
+  }
+  else {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
   }
 }

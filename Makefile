@@ -1,4 +1,4 @@
-.PHONY: install brain-games publish link lint brain-even brain-calc brain-gcd brain-progression
+.PHONY: install brain-games publish link lint brain-even brain-calc brain-gcd brain-progression brain-prime
 
 # Установка зависимостей и настройка прав
 install:
@@ -40,3 +40,7 @@ brain-gcd:
 # Запуск игры brain-progression
 brain-progression:
 	./bin/brain-progression.js
+
+# Запуск игры brain-prime
+brain-prime:
+	./bin/brain-prime.js
