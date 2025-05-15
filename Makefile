@@ -9,10 +9,11 @@ install:
 	chmod +x bin/brain-calc.js
 	chmod +x bin/brain-gcd.js
 	chmod +x bin/brain-progression.js
+	chmod +x bin/brain-prime.js
 
 # Запуск игры
 brain-games:
-	./bin/brain-games.js
+	node ./bin/brain-games.js
 
 # Тест публикации (без реальной отправки)
 publish:
@@ -26,21 +27,22 @@ link:
 lint:
 	npx eslint --fix .
 
+# Запуск игры brain-calc
 brain-calc:
-	./bin/brain-calc.js
+	node ./bin/brain-calc.js
 
 # Запуск игры brain-even
 brain-even:
-	./bin/brain-even.js
+	node ./bin/brain-even.js
 
 # Запуск игры brain-even
 brain-gcd:
-	./bin/brain-gcd.js
+	node ./bin/brain-gcd.js
 
 # Запуск игры brain-progression
 brain-progression:
-	./bin/brain-progression.js
+	node ./bin/brain-progression.js
 
 # Запуск игры brain-prime
 brain-prime:
-	./bin/brain-prime.js
+	node ./bin/brain-prime.js

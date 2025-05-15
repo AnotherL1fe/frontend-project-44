@@ -1,35 +1,16 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
-import getName from '../src/cli.js';
-import runGame from '../src/index.js';
+import { isEven, generationNumber } from '../src/helpers/helpers.js'
+import runGame from '../src/runGame.js'
 
-const name = getName();
-console.log('Answer "yes" if the number is even, otherwise answer "no"');
+const generateEvenQuestion = () => {
+  const num = generationNumber()
+  const correctAnswer = String(isEven(num) ? 'yes' : 'no')
 
-let correctAnswers = 0;
-const roundsToWin = 3;
+  const question = `${num}`
 
-while (correctAnswers < roundsToWin) {
-  const num = Math.floor(Math.random() * 100);
-  console.log(`Question: ${num}`);
-  const userAnswer = readlineSync.question('Your answer: ').trim().toLowerCase();
-
-  if (userAnswer !== 'yes' && userAnswer !== 'no') {
-    console.log(`"${userAnswer}" is invalid input! Please answer "yes" or "no".`);
-    continue;
-  }
-
-  const isEven = num % 2 === 0;
-  const correctResponse = isEven ? 'yes' : 'no';
-
-  if (userAnswer === correctResponse) {
-    console.log('Correct!');
-    correctAnswers++;
-  }
-  else {
-    console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctResponse}".`);
-  }
+  return [question, correctAnswer]
 }
 
-console.log(`Congratulations, ${name}!`);
+const description = `Answer "yes" if the number is even, otherwise answer "no".`
+runGame(description, generateEvenQuestion)

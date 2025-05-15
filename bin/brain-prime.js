@@ -1,41 +1,28 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
-import getName from '../src/cli.js';
+import welcomeUser from '../src/cli.js'
+import { generationNumber, isPrime } from '../src/helpers/helpers.js'
+import readlineSync from 'readline-sync'
 
-const name = getName();
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+console.log('Welcome to the Brain Games!')
 
-let correctAnswers = 0;
-const roundsToWin = 3;
+const name = welcomeUser()
 
-const isPrime = (num) => {
-  if (num < 2) return false;
-  for (let i = 2, max = Math.sqrt(num); i <= max; i++) {
-    if (num % i === 0) return false;
-  }
-  return true;
+console.log(`Hello, ${name}!`)
+
+console.log(`Answer "yes" if given number is prime. Otherwise answer "no".`)
+
+const num = generationNumber()
+const correctAnswer = isPrime(num) ? 'yes' : 'no'
+
+const question = num
+console.log(`Question: ${question}`)
+
+const userAnswer = readlineSync.question('Your answer: ')
+
+if (String(userAnswer) === String(correctAnswer)) {
+  console.log('Correct!')
 }
-
-while (correctAnswers < roundsToWin) {
-  const number = Math.floor(Math.random() * 100) + 1;
-  const correctAnswer = isPrime(number) ? 'yes' : 'no';
-
-  console.log(`Question: ${number}`);
-  const userAnswer = readlineSync.question('Your answer: ').trim().toLowerCase();
-
-  if (userAnswer !== 'yes' && userAnswer !== 'no') {
-    console.log('Please answer "yes" or "no".');
-    continue;
-  }
-
-  if (userAnswer === correctAnswer) {
-    console.log('Correct!');
-    correctAnswers += 1;
-  }
-  else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  }
-}
-
-console.log(`Congratulations, ${name}!`);
+else {
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
+};
