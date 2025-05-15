@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { generationMathOperator, calcNums, generationNumber } from '../src/helpers/helpers.js'
+import runGame from '../src/runGame.js'
 
 const generateCalcQuestion = () => {
   const a = generationNumber()
