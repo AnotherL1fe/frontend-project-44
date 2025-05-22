@@ -47,11 +47,12 @@ export const gcd = (a, b) => {
   return a
 }
 
-export const generationNumber = () => {
-  const crypto = window.crypto || window.msCrypto // Для браузеров
-  const randomValue = crypto.getRandomValues(new Uint32Array(1))[0]
-  return Math.floor((randomValue / 4294967296) * 101) // Нормализация до [0, 1)
-}
+import crypto from 'crypto';
+
+export const generationNumber = (max) => {
+  const randomValue = crypto.randomBytes(4).readUInt32BE(0);
+  return Math.floor((randomValue / 4294967296) * max);
+};
 
 export const generationArithmeticProgression = () => {
   function getSecureRandomInRange(min, max) {
