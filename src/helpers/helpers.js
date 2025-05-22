@@ -12,7 +12,7 @@ export const calcNums = (num1, num2, operator) => {
 }
 
 export const generationMathOperator = () => {
-  const num = Math.floor(Math.random() * 3)
+  const num = Math.floor(window.crypto.getRandomValues(new Uint32Array(1))[0] / 4294967296 * 3)
 
   switch (num) {
     case 0:
@@ -48,13 +48,20 @@ export const gcd = (a, b) => {
 }
 
 export const generationNumber = () => {
-  return Math.floor(Math.random() * 101)
+  const crypto = window.crypto || window.msCrypto // Для браузеров
+  const randomValue = crypto.getRandomValues(new Uint32Array(1))[0]
+  return Math.floor((randomValue / 4294967296) * 101) // Нормализация до [0, 1)
 }
 
 export const generationArithmeticProgression = () => {
-  const lengthProgression = Math.floor(Math.random() * (20 - 5 + 1)) + 5
-  const stepProgression = Math.floor(Math.random() * (10 - 1 + 1)) + 1
-  const start = Math.floor(Math.random() * 100)
+  function getSecureRandomInRange(min, max) {
+    const randomValue = crypto.getRandomValues(new Uint32Array(1))[0]
+    return Math.floor((randomValue / 4294967296) * (max - min + 1)) + min
+  }
+
+  const lengthProgression = getSecureRandomInRange(5, 20)
+  const stepProgression = getSecureRandomInRange(1, 10)
+  const start = getSecureRandomInRange(0, 99)
 
   let current = start
 
@@ -69,7 +76,13 @@ export const generationArithmeticProgression = () => {
 }
 
 export const replaceRandomWithDots = (arr) => {
-  const positionPoints = Math.floor(Math.random() * arr.length)
+  function getSecureRandomIndex(arrayLength) {
+    const randomValue = crypto.getRandomValues(new Uint32Array(1))[0]
+    return Math.floor((randomValue / 4294967296) * arrayLength)
+  }
+
+  const positionPoints = getSecureRandomIndex(arr.length)
+  const randomElement = arr[positionPoints]
   const newArr = arr.map((item, index) => (index !== positionPoints ? item : '..'))
 
   return [newArr, arr[positionPoints]]
