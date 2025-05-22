@@ -9,18 +9,9 @@ const generateQuestion = () => {
   return [`Question: ${number}`, correctAnswer];
 };
 
-export default () => {
-  const rules = 'Answer "yes" if the number is even, otherwise answer "no".'
-  const gameData = []
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  for (let i = 0; i < 3; i += 1) {
-    gameData.push(generateQuestion())
-  }
+// Генерация данных для 3 раундов игры
+const gameData = Array.from({ length: 3 }, () => generateQuestion());
 
-  return { rules, gameData }
-}
-
-// ... остальной код игры
-
-const description = `Answer "yes" if the number is even, otherwise answer "no".`
-runGame(description, generateEvenQuestion)
+runGame(description, gameData);

@@ -26,13 +26,7 @@ export const generationMathOperator = () => {
   }
 }
 
-export const isEven = (num) => {
-  if (num % 2 === 0) {
-    return true
-  }
-
-  return false
-}
+export const isEven = (num) => num % 2 === 0;
 
 export const gcd = (a, b) => {
   a = Math.abs(a)
