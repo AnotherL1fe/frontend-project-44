@@ -47,12 +47,12 @@ export const gcd = (a, b) => {
   return a
 }
 
-import crypto from 'crypto';
+import crypto from 'crypto'
 
-export const generationNumber = (max) => {
-  const randomValue = crypto.randomBytes(4).readUInt32BE(0);
-  return Math.floor((randomValue / 4294967296) * max);
-};
+export const generateRandomNumber = (max) => {
+  const randomValue = crypto.randomBytes(4).readUInt32BE(0)
+  return Math.floor((randomValue / 4294967296) * max)
+}
 
 export const generationArithmeticProgression = () => {
   function getSecureRandomInRange(min, max) {
