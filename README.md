@@ -1,9 +1,4 @@
 # Brain Games
-
-[![Tests](https://github.com/username/brain-games/actions/workflows/tests.yml/badge.svg)](https://github.com/username/brain-games/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/maintainability)](https://codeclimate.com/github/username/brain-games)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/test_coverage)](https://codeclimate.com/github/username/brain-games)
-
 Набор из пяти консольных игр для тренировки логического мышления и математических способностей. Каждая игра предлагает серию вопросов, на которые нужно ответить правильно три раза подряд для победы.
 
 ##  Установка
