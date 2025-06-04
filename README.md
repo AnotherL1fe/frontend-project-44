@@ -10,7 +10,7 @@
 
 1. Клонируйте репозиторий:
 ```bash
-   git clone https://github.com/username/brain-games.git
+   git clone https://github.com/AnotherL1fe/frontend-project-44.git
 ```
 Перейдите в директорию проекта:
 
