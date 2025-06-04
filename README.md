@@ -11,12 +11,14 @@
 1. Клонируйте репозиторий:
 ```bash
    git clone https://github.com/username/brain-games.git
-Перейдите в директорию проекта:
 ```
+Перейдите в директорию проекта:
+
 ```bash
 cd brain-games
-Установите пакет:
 ```
+Установите пакет:
+
 ```bash
 make install
 ```
