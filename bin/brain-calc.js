@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// ↑ Шебанг (обязательно!) — указывает, что скрипт запускается через Node.js
 
 import runGame from '../src/runGame.js'
 import { generationMathOperator, calcNums, generationNumber } from '../src/helpers/helpers.js'
