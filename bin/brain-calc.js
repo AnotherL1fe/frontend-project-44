@@ -16,4 +16,4 @@ const generateCalcQuestion = () => {
 }
 
 const description = 'What is the result of the expression?'
-runGame(description, generateCalcQuestion);
+runGame(description, generateCalcQuestion)
