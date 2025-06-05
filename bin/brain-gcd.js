@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// ↑ Шебанг (обязательно!) — указывает, что скрипт запускается через Node.js
 
 import { gcd, generationNumber } from '../src/helpers/helpers.js'
 import runGame from '../src/runGame.js'
