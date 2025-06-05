@@ -14,4 +14,4 @@ const generateProgressionQuestion = () => {
 }
 
 const description = `What number is missing in the progression?`
-runGame(description, generateProgressionQuestion)
+runGame(description, generateProgressionQuestion);
