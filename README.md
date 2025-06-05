@@ -111,8 +111,8 @@ make install-dev
 Запустите тесты:
 ```bash
 make test
-Проверьте стиль кода:
 ```
+Проверьте стиль кода:
 ```bash
 make lint
 ```
