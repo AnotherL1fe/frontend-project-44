@@ -87,4 +87,4 @@ export const isPrime = (num) => {
   }
 
   return true
-}
+};
