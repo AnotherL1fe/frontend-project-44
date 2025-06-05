@@ -12,7 +12,7 @@ export const calcNums = (num1, num2, operator) => {
 }
 
 export const generationMathOperator = () => {
-  const num = Math.floor(Math.random() * 3) // nosonar - not used for security purposes
+  const num = Math.floor(Math.random() * 3)
 
   switch (num) {
     case 0:
@@ -48,15 +48,15 @@ export const gcd = (a, b) => {
 }
 
 export const generationNumber = () => {
-  return Math.floor(Math.random() * 101) // nosonar - not used for security purposes
+  return Math.floor(Math.random() * 101)
 }
 
 export const generationArithmeticProgression = () => {
-  const lengthProgression = Math.floor(Math.random() * (20 - 5 + 1)) + 5 // nosonar - not used for security purposes
+  const lengthProgression = Math.floor(Math.random() * (20 - 5 + 1)) + 5
 
-  const stepProgression = Math.floor(Math.random() * (10 - 1 + 1)) + 1 // nosonar - not used for security purposes
+  const stepProgression = Math.floor(Math.random() * (10 - 1 + 1)) + 1
 
-  const start = Math.floor(Math.random() * 100) // nosonar - not used for security purposes
+  const start = Math.floor(Math.random() * 100)
 
   let current = start
 
@@ -71,17 +71,16 @@ export const generationArithmeticProgression = () => {
 }
 
 export const replaceRandomWithDots = (arr) => {
-  const positionPoints = Math.floor(Math.random() * arr.length) // nosonar - not used for security purposes
+  const positionPoints = Math.floor(Math.random() * arr.length)
   const newArr = arr.map((item, index) => (index !== positionPoints ? item : '..'))
 
   return [newArr, arr[positionPoints]]
 }
 
 export const isPrime = (num) => {
-  if (num <= 1) return false // 0 и 1 — не простые
-  if (num === 2) return true // 2 — простое
+  if (num <= 1) return false 
+  if (num === 2) return true 
 
-  // Проверяем делители от 2 до корня из числа
   for (let i = 2; i <= Math.sqrt(num); i++) {
     if (num % i === 0) return false
   }
