@@ -14,4 +14,4 @@ const generateEvenQuestion = () => {
 }
 
 const description = `Answer "yes" if the number is even, otherwise answer "no".`
-runGame(description, generateEvenQuestion)
+runGame(description, generateEvenQuestion);
